@@ -32,8 +32,8 @@ export default function InstrumentCard({instrument, setCurrentInstrument, curren
           }}> Rent now</Link>
           <div>
             <img src={instrument.image_url}/>
-            <p>{instrument.name} is {instrument.description}</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum molestiae voluptates sed ullam doloremque minus quas culpa ab possimus tempore iure sit libero, ipsum 
+            <p className='description'>{instrument.name} is {instrument.description}</p>
+            <p className='description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum molestiae voluptates sed ullam doloremque minus quas culpa ab possimus tempore iure sit libero, ipsum 
             porro molestias modi, vero provident ea.</p>
           </div>
           

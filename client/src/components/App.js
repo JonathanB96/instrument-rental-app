@@ -41,7 +41,7 @@ function App() {
            <Signup/>
         </Route>
        </Switch>
-       <Footer/>
+       
      
     </div>
   );

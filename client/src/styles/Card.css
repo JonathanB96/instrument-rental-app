@@ -16,3 +16,7 @@
 .card:hover{
    border: 1px solid orange;
 }
+.description{
+    color: white;
+    font-weight: 700;
+}

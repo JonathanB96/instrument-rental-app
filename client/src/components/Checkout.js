@@ -30,7 +30,7 @@ export default function Checkout() {
       };
     
       return (
-        <div className="">
+        <div className="checkout container">
           <h1>{selectedInstrument.name}</h1>
           <h3>Price: ${selectedInstrument.price}</h3>
           <StripeCheckout
@@ -42,6 +42,7 @@ export default function Checkout() {
             shippingAddress
            
           />
+          <button className='btn btn-danger'> <a  href='/' className='nav-link'>Cancel</a></button>
         </div>
       );
 }
