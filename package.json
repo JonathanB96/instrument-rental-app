@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "react-router-dom": "^5.3.4",
+    "react-stripe-checkout": "^2.6.3",
     "stripe": "^11.17.0"
   }
 }
