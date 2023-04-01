@@ -4,9 +4,15 @@
     margin-right: 10px;
     border: none;
     cursor: pointer;
+    width: 15rem;
+    height: 20rem; 
+    margin-bottom: 30%;
 }
 
-.instru-img:hover{
-    width: 20rem;
-    height: 25rem;
+.instu-img{
+   
+}
+
+.card:hover{
+   border: 1px solid orange;
 }
