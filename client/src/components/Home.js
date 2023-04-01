@@ -6,16 +6,33 @@ import FAQ from './FAQ'
 import Footer from './Footer'
 
 export default function Home({setCurrentInstrument, currentInstrument}) {
+    const [instruments, setInstruments] = useState([])
     const[list, setList]= useState(false)
+    const [searchValue, setSearchValue]= useState("")
+
 
     useEffect(()=>{
         fetch('/instruments')
         .then((r)=>r.json())
-        .then((instruments)=>{
-            setList(instruments)
+        .then((allInstruments)=>{
           
+            setInstruments(allInstruments)
+            setList(allInstruments)
         })
     },[])
+    
+    function handleSearch(e){
+      setSearchValue(e.target.value)
+      if(e.target.value===""){
+        setList(instruments)
+        return
+      }
+      const filteredValues = list.filter((item)=>{
+      return item.name.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
+    })
+    setList(filteredValues)
+  }
+    
     
  if (!list){ return <div class="spinner-border text-primary" role="status">
  <span class="visually-hidden">Loading...</span>
@@ -32,6 +49,13 @@ export default function Home({setCurrentInstrument, currentInstrument}) {
                     behavior: "smooth",
                   });  
                 }} className="btn btn-outline-warning">CHOOSE INSTRUMENT</button>
+                <div className='form'>
+                    <input className="form-control me-2" type="search" placeholder="Search instrument" aria-label="Search"
+                    onChange={handleSearch}/>
+                    <button className="btn btn-outline-success" type="submit">Search</button>
+                </div>
+               
+             
             </div>
 
             <div>
@@ -49,7 +73,7 @@ export default function Home({setCurrentInstrument, currentInstrument}) {
 
         <div>
 
-        <div className=''>
+        <div className='section'>
             <div >
                 <h4>FROM BEGINNER TO MAESTRO</h4>
                 <h1>Instruments for all skill levels</h1>
@@ -63,7 +87,7 @@ export default function Home({setCurrentInstrument, currentInstrument}) {
             
         </div>
 
-        <div className=''>
+        <div className='section'>
             <div >
                 <h4>NO STRINGS ATTACHED</h4>
                 <h1>Rent month-to-month, no long-term contract</h1>

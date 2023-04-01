@@ -26,7 +26,7 @@ export default function InstrumentCard({instrument, setCurrentInstrument, curren
         <p>{instrument.name}</p>
         <p>${instrument.price}/mo</p>
         <Instrument open={isOpen} onClose={onClose} instrument={instrument}>
-          show {instrument.name}
+          
           <Link to="/checkout" className="btn btn-outline-warning"onClick={()=>{
             setSelectedInstrument(instrument)
           }}> Rent now</Link>
