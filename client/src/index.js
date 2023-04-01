@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { InstrumentProvider } from './components/SelectedInstrument';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  
+  <BrowserRouter>   
+    <InstrumentProvider>
+      <App />
+    </InstrumentProvider>     
+  </BrowserRouter>,
+  
   document.getElementById('root')
 );
 
