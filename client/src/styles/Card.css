@@ -1,0 +1,12 @@
+.card{
+    text-align: center;
+    width: fit-content; 
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.instru-img:hover{
+    width: 20rem;
+    height: 25rem;
+}
