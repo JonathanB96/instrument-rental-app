@@ -30,7 +30,7 @@ export default function Checkout() {
       };
     
       return (
-        <div className="checkout container">
+        <div className="checkout container card">
           <h1>{selectedInstrument.name}</h1>
           <h3>Price: ${selectedInstrument.price}</h3>
           <StripeCheckout
